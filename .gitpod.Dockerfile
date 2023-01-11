@@ -196,3 +196,7 @@ PS1='\[]0;\u \w\]\[[01;32m\]\u\[[00m\] \[[01;34m\]\w\[[00m\]\[\e[0;38;5;19
 # Hack to pre-install bundled gems
 RUN echo "rvm use 3.0.3" >> ~/.bashrc
 RUN echo "rvm_silence_path_mismatch_check_flag=1" >> ~/.rvmrc
+
+# Downgrade node to v15 for webpacker
+RUN  sudo npm install -g n
+RUN  sudo n 15.7.0
